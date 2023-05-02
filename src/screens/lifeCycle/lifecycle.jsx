@@ -17,11 +17,27 @@ function LifeCycleComp() {
             {list.map(l => {
                 return <Fragment key={l.id}>
                     <h1>{l.title}</h1>
-                    <p>{l.body}</p>
+                    <com />
                 </Fragment>
             })}
         </>
     )
 }
+
+const com = () => {
+    return <><p>{l.body}</p>
+        <p>{l.body}</p></>
+}
+
+
+/*
+Screen :
+    get list of values
+    [] [] [] [] []
+    [] [] [] [] []
+    [] [] [] [] []
+    [] [] [] [] []
+
+*/
 
 export default LifeCycleComp
