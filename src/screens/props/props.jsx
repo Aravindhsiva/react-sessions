@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import Card from '../../components/card';
+import { Link, Outlet } from 'react-router-dom';
 
 function PropsExample() {
 
@@ -37,17 +38,20 @@ function PropsExample() {
     // props -> children
     return (
         <>
-            <div class="container">
+            <div className="container">
                 {list.map((miniList, index) =>
-                    <div class="row align-items-start mt-3">
+                    <div className="row align-items-start mt-3" key={index}>
                         {miniList.map((product, cIndex) => {
-                            return <Card product={product} onReadMoreClicked={(id) => handleReadMoreEvent(index, cIndex, id)} >
-                                <button className="btn btn-sm btn-secondary">Click Me</button>
+                            return <Card key={product.id} product={product} onReadMoreClicked={(id) => handleReadMoreEvent(index, cIndex, id)} >
+                                <br/>
+                                <button className="btn btn-sm btn-secondary">Click Me</button>&emsp;
+                                <Link to={"/p/"+product.id}><button className="btn btn-sm btn-primary">View in Detail</button></Link>
                             </Card>
                         })}
                     </div>
                 )}
             </div>
+            <Outlet/>
         </>
     )
 }
