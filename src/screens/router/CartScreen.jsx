@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 
-export const CartScreen = () => {
+const CartScreen = () => {
     return (
         <Fragment>
             <nav className="navbar navbar-expand-lg bg-primary">
@@ -126,3 +126,5 @@ export const CartScreen = () => {
         </Fragment>
     )
 }
+
+export default CartScreen;
